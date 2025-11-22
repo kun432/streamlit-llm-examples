@@ -1,50 +1,51 @@
-# 🎈 Streamlit + LLM Examples App
+# 🎈 Streamlit + LLM サンプルアプリ
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/llm-examples?quickstart=1)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/kun432/streamlit-llm-examples?quickstart=1)
 
-Starter examples for building LLM apps with Streamlit.
+Streamlit で LLM アプリを構築するためのスターターサンプルです。
 
-## Overview of the App
+## アプリ概要
 
-This app showcases a growing collection of LLM minimum working examples.
+このアプリには、LLM のミニマムな実装例を随時追加しています。
 
-Current examples include:
+現在利用できるサンプル:
 
-- Chatbot
-- File Q&A
-- Chat with Internet search
-- LangChain Quickstart
+- チャットボット
+- ファイル Q&A
+- インターネット検索付きチャット
+- LangChain クイックスタート
 - LangChain PromptTemplate
-- Chat with user feedback
+- フィードバック入力付きチャット
 
-## Demo App
+## デモアプリ
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://llm-examples.streamlit.app/)
 
-### Get an OpenAI API key
+### OpenAI API キーを取得する
 
-You can get your own OpenAI API key by following the following instructions:
+以下の手順で OpenAI API キーを取得できます。
 
-1. Go to https://platform.openai.com/account/api-keys.
-2. Click on the `+ Create new secret key` button.
-3. Next, enter an identifier name (optional) and click on the `Create secret key` button.
+1. https://platform.openai.com/account/api-keys にアクセスします。
+2. `+ Create new secret key` をクリックします。
+3. 識別名（任意）を入力し、`Create secret key` をクリックします。
 
-### Enter the OpenAI API key in Streamlit Community Cloud
+### Streamlit Community Cloud に OpenAI API キーを設定する
 
-To set the OpenAI API key as an environment variable in Streamlit apps, do the following:
+Streamlit アプリで環境変数として OpenAI API キーを設定するには、以下を行います。
 
-1. At the lower right corner, click on `< Manage app` then click on the vertical "..." followed by clicking on `Settings`.
-2. This brings the **App settings**, next click on the `Secrets` tab and paste the API key into the text box as follows:
+1. 画面右下の `< Manage app` をクリックし、縦三点リーダー「...」から `Settings` を開きます。
+2. 表示された **App settings** で `Secrets` タブを開き、次のように API キーを貼り付けます。
 
 ```sh
 OPENAI_API_KEY='xxxxxxxxxx'
 ```
 
-## Run it locally
+## ローカルで実行する
+
+`uv`が必要です。
 
 ```sh
-virtualenv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-streamlit run Chatbot.py
+uv sync
+uv run pre-commit install
+uv run streamlit run Chatbot.py
 ```
